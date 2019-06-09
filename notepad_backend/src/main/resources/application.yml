@@ -1,0 +1,22 @@
+spring:
+  servlet:
+    multipart:
+      max-file-size: 6MB
+      max-request-size: 20MB
+      enabled: true
+      file-size-threshold: 2KB
+  http:
+    encoding:
+      charset: utf-8
+      force-response: true
+      force: true
+server:
+  compression:
+    enabled: true
+    mime-types: application/json,text/html,text/txt,text/plain,image/jpeg,image/png
+
+logging:
+  file: logs/applog.log
+
+storage:
+    path: assets/ #deffault storage path
