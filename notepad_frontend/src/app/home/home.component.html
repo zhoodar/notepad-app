@@ -1,0 +1,36 @@
+<div class="loading-shade" *ngIf="isLoading">
+  <mat-spinner *ngIf="isLoading"></mat-spinner>
+</div>
+
+<div>
+  <div class="header-row">
+    <div class="logo-row">
+      <mat-icon>book</mat-icon>
+      <h4>Note Pad</h4>
+    </div>
+    <button (click)="onAddNewNote()" mat-fab color="primary">
+      <mat-icon>add</mat-icon>
+    </button>
+  </div>
+
+  <mat-tab-group color="accent" backgroundColor="primary"
+                 [selectedIndex]="selected.value" (selectedIndexChange)="selected.setValue($event)">
+
+    <mat-tab *ngFor="let note of notes;" label="{{note.name}}">
+      <div>
+        <textarea [(ngModel)]="note.content"></textarea>
+
+        <div class="button-row">
+          <button (click)="onSaveNote(note)" class="action-button" mat-raised-button color="primary">
+            Save
+          </button>
+
+          <button (click)="onDeleteNote(note)" class="action-button" mat-raised-button color="accent">
+            Delete
+          </button>
+        </div>
+      </div>
+    </mat-tab>
+  </mat-tab-group>
+
+</div>

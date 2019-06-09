@@ -1,0 +1,11 @@
+<div mat-dialog-content>
+  <p>Please enter the file name</p>
+  <mat-form-field>
+    <input matInput [(ngModel)]="data.name" placeholder="filename" required>
+  </mat-form-field>
+  <p *ngIf="validated" class="error">Please, provide a name )</p>
+</div>
+<div mat-dialog-actions class="modal-button-row">
+  <button mat-button (click)="onCancel()">Cancel</button>
+  <button mat-button (click)="onCreate(data.name)" cdkFocusInitial>Create</button>
+</div>

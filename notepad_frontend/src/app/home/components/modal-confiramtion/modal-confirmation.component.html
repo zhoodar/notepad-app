@@ -1,0 +1,7 @@
+<div mat-dialog-content>
+  <p>Are sure want to delete this file '{{data.name}}'?</p>
+</div>
+<div mat-dialog-actions class="modal-button-row">
+  <button mat-button (click)="onCancel()">Cancel</button>
+  <button mat-button (click)="onApprove()" cdkFocusInitial>Yes</button>
+</div>
