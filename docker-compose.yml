@@ -1,0 +1,33 @@
+version: '3'
+
+services:
+
+  backend:
+    image: openjdk:8-jre-alpine
+    container_name: backend
+    ports:
+      - 8080:8080
+    volumes:
+      - ./notepad_backend/build/libs/notepad_backend-0.0.1-SNAPSHOT.jar:/application.jar
+      - .${ASSET_PATH}:${ASSET_PATH}
+    command: ["java", "-jar", "application.jar", "${ASSET_PATH}"]
+    networks:
+      - backendNetwork
+      - frontendNetwork
+
+  frontend:
+    image: nginx:alpine
+    container_name: frontend
+    ports:
+      - 4200:80
+    depends_on:
+      - backend
+    volumes:
+      - ./nginx.conf:/etc/nginx/nginx.conf
+      - ./notepad_frontend/dist/notepad_frontend/:/usr/share/nginx/html
+    networks:
+      - frontendNetwork
+
+networks:
+  backendNetwork:
+  frontendNetwork:
