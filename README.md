@@ -4,6 +4,7 @@ This is a simple CRUD, SPA application
 ### Technologies used
 * Java 1.8
 * Spring Boot
+* TypeScript
 * Angular 8
 * Angular Material
 
@@ -17,10 +18,9 @@ This is a simple CRUD, SPA application
 Make sure you have installed all the prerequisites
 * Clone this project
 ```sh
-git clone https://github.com/zhoodar/...
+git clone https://github.com/zhoodar/notpad-app.git
 ```
-All the build bundles already within the source code, if you want to just start,
-feel free to run
+All the build bundles already within the source code, if you want to skip build, feel free to run
 * Build frontend
 ```sh
 cd <cloned project directory/notepad_frontend>
@@ -37,9 +37,8 @@ cd <cloned project directory/notepad_backend>
 cd <cloned project directory/>
 docker-compose up
 ```
-### Try it
-- Now open your browser: http://localhost:4200/
+* Now open your browser: http://localhost:4200/
 
 ### Configuration
-The App will run with default setting, in order to adjust setting see
+The App will run with default settings, in order to adjust settings see
 `.env` file
